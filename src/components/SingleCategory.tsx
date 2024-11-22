@@ -1,6 +1,8 @@
 "use client";
 import { Category } from "@/app/type/categories";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import AnimateHeight from "react-animate-height";
 
@@ -23,10 +25,14 @@ const SingleCategory = ({
     }
   };
 
+  const pathname = usePathname();
+  console.log({ pathname });
+
   return (
     <div className="mx-4">
-      <button
-        className="flex w-full items-center gap-4 p-2.5 hover:bg-[#E8F0F5]"
+      <Link
+        href={`/${category.cat_id}`}
+        className={`flex w-full items-center gap-4 p-2.5 hover:bg-[#E8F0F5] ${pathname === `/${category.cat_id}` ? "bg-[#E8F0F5]" : ""}`}
         onClick={() => handleDropDown(id)}
       >
         <div className="rounded-lg bg-[#CFE0E5] p-2.5">
@@ -43,11 +49,13 @@ const SingleCategory = ({
           </h5>
           <p className="mt-1.5 text-[#7E7E7E]">Subcategory: 11</p>
         </div>
-      </button>
+      </Link>
 
       <AnimateHeight
         duration={400}
-        height={dropDown === id ? "auto" : 0}
+        height={
+          dropDown === id || pathname === `/${category.cat_id}` ? "auto" : 0
+        }
         aria-label={`example-panel-${id}`}
       >
         <div className="my-2 ml-12 border-l-2 border-dotted border-primary">
