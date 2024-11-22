@@ -1,5 +1,4 @@
-
-import { Category } from "@/app/type/categories";
+import { Category } from "@/app/type/types";
 
 type ResponseData = {
   data: Category[];
@@ -17,9 +16,9 @@ export const fetchCategories = async (): Promise<Category[]> => {
       "https://duas-page-server.up.railway.app/api/v1/categories",
       {
         next: {
-          revalidate: 3600 
-        }
-      }
+          revalidate: 3600,
+        },
+      },
     );
 
     if (!res.ok) {

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const TopBar = () => {
   return (
-    <div className="flex w-full items-center justify-between gap-6 p-4 pb-5 lg:py-5 lg:pb-6">
+    <div className="max-xxl:hidden flex w-full items-center justify-between gap-6 p-4 pb-5 lg:py-5 lg:pb-6">
       <h3 className="h5 font-semibold text-[#393939]">Dua Page</h3>
       <div className="flex items-center justify-between rounded-2xl border-[0.5px] border-[#E2E2E2] bg-white py-1 pr-1 ps-4">
         <input

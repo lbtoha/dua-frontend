@@ -1,15 +1,22 @@
 "use client";
-import { Category } from "@/app/type/categories";
+import { Category } from "@/app/type/types";
 import { useState } from "react";
 import SingleCategory from "./SingleCategory";
 
-const Categories = ({ categories }: { categories: Category[] }) => {
+type Props = {
+  categories: Category[];
+ 
+};
+
+const Categories = ({ categories }: Props) => {
   const [dropDown, setDropDown] = useState("");
   return (
-    <div className="relative h-[90vh] w-[429px] overflow-hidden rounded-2xl bg-white">
-      <div className="fixed w-full max-w-[429px] rounded-2xl bg-white">
+    <div
+      className={`relative h-[90vh] w-[300px] shrink-0 overflow-hidden rounded-2xl bg-white xxl:w-[429px] `}
+    >
+      <div className="static w-full max-w-[429px] rounded-2xl bg-white">
         <div>
-          <h4 className="rounded-t-lg bg-primary py-[18px] text-center text-lg font-semibold text-white">
+          <h4 className="rounded-t-2xl bg-primary py-[18px] text-center text-lg font-semibold text-white">
             Categories
           </h4>
           <div className="m-4 flex items-center justify-between rounded-2xl border-[0.5px] border-[#E2E2E2] bg-white py-1 pr-1 ps-4">

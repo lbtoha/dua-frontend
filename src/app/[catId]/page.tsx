@@ -1,6 +1,6 @@
-import Categories from "@/components/Categories";
 import IconSidebar from "@/components/IconSidebar";
-import MainContent from "@/components/MainContent";
+import RightSidebar from "@/components/RightSiebar";
+import SidebarAndContent from "@/components/SidebarAndContent";
 import TopBar from "@/components/TopBar";
 import { fetchCategories } from "@/utils/fetchCategories";
 
@@ -18,7 +18,7 @@ async function getCategories() {
 
 interface PageProps {
   params: {
-    catId: string; 
+    catId: string;
   };
 }
 
@@ -32,12 +32,14 @@ export default async function Page({ params }: PageProps) {
       <div className="spx40px spt40px">
         <div className="flex gap-[30px]">
           <IconSidebar />
-          <div className="relative h-screen w-[calc(100%-200px)]">
-            <div className="fixed h-screen w-[calc(100%-200px)] overflow-hidden">
+          <div className="relative h-screen w-full 4xl:w-[calc(100%-200px)]">
+            <div className="fixed h-screen overflow-hidden 4xl:w-[calc(100%-200px)]">
               <TopBar />
-              <div className="flex justify-between gap-5 lg:gap-6 xl:gap-[33px]">
-                <Categories categories={categories} />
-                <MainContent params={{ catId }} />
+              <div className="flex gap-5 lg:gap-6 xl:gap-[33px]">
+              
+                <SidebarAndContent params={{ catId }} categories={categories} />
+
+                <RightSidebar />
               </div>
             </div>
           </div>

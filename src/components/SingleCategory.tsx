@@ -1,5 +1,5 @@
 "use client";
-import { Category } from "@/app/type/categories";
+import { Category } from "@/app/type/types";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -64,13 +64,13 @@ const SingleCategory = ({
               <div className="my-2 flex flex-row" key={sub.id}>
                 <div className="mt-1.5 h-2 w-2 -translate-x-4 rounded-full bg-primary"></div>
                 <div className="flex flex-col items-start justify-start">
-                  <a
-                    href={`/duas/dua's-importance?cat=${sub.cat_id}&subcat=${sub.subcat_id}`}
+                  <Link
+                    href={`#${sub.id}`}
                   >
-                    <p className="text-title dark:text-dark-text xs:text-2xs cursor-pointer text-left text-sm font-semibold">
+                    <p className="text-title  xs:text-2xs cursor-pointer text-left text-sm font-semibold">
                       {sub.subcat_name_en}
                     </p>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

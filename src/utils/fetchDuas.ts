@@ -1,4 +1,4 @@
-import { Dua } from "@/app/type/categories";
+import { Dua } from "@/app/type/types";
 
 type ResponseData = {
   data: Dua[];
@@ -26,13 +26,13 @@ export const fetchDuas = async (catId: number): Promise<Dua[]> => {
     if (!res.ok) {
       console.error("Fetch failed with status:", res.status);
       console.error("Response:", await res.text());
-      return []; 
+      return [];
     }
 
     const data: ApiResponse = await res.json();
     return data.data.data;
   } catch (error) {
     console.error("Error fetching duas:", error);
-    return []; 
+    return [];
   }
 };

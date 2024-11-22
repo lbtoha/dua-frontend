@@ -22,11 +22,11 @@ import Image from "next/image";
 
 const IconSidebar = () => {
   return (
-    <div className="relative h-[93vh] w-[100px] rounded-3xl bg-white">
-      <div className="fixed h-full overflow-x-hidden">
+    <div className="relative h-[93vh] w-[100px] rounded-3xl bg-white max-xxl:hidden">
+      <div className="static h-full overflow-x-hidden">
         <div className="flex w-[100px] flex-col gap-y-5">
           <div className="flex flex-col">
-            <div className=" mb-10 pt-7 xl:mb-16 2xl:mb-16 3xl:mb-24">
+            <div className="mb-10 pt-7 xl:mb-16 2xl:mb-16 3xl:mb-24">
               <Image
                 src={duaLogo}
                 alt="dua-logo"
