@@ -26,7 +26,7 @@ const IconSidebar = () => {
       <div className="fixed h-full overflow-x-hidden">
         <div className="flex w-[100px] flex-col gap-y-5">
           <div className="flex flex-col">
-            <div className="container mb-10 pt-7 xl:mb-16 2xl:mb-16 3xl:mb-24">
+            <div className=" mb-10 pt-7 xl:mb-16 2xl:mb-16 3xl:mb-24">
               <Image
                 src={duaLogo}
                 alt="dua-logo"
